@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/signin.css">
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+        <h2 class="form-signin form-signin-heading ">Create Account</h2>
+</div>
+
+{% crispy form %}
+
+{% endblock %}

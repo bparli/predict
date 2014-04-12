@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron ui-widget">
+        <h1 class="top">Flights Mystic</h1>
+		
+        <p>Foresee air travel delays and cancellations with The Flights Mystic.  To start predicting on-time flight performance enter information below.   
+		The more information provided, the more accurate the Flights Mystic prediction.</p>
+	  {% crispy form %}	 
+
+	  </div>
+</div> <!-- /container -->
+
+
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container theme-showcase" role="main">
+	<div class="jumbotron">
+        <h1 class="top">The Flights Mystic Prediction</h1></br>
+	<div class="col-md-6 result">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="top">Delay Prediction</h2>
+            </div>
+            <div class="panel-body">
+				<table>
+				<tbody>
+					<tr>
+						<td><h1>{{ del_likelihood }}%</h1></td>
+						<td><h4>Compared with {{ all_del_rate }}% nationally</h4></td>
+					</tr>
+				</tbody>
+				</table>
+            </div>
+          </div>
+	</div>
+	<div class="col-md-6 result">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="top">Cancellation Prediction</h2>
+            </div>
+            <div class="panel-body">
+				<table>
+				<tbody>
+					<tr>
+						<td><h1>{{ can_likelihood }}%</h1></td>
+						<td><h4>Compared with {{ all_can_rate }}% nationally</h4></td>
+					</tr>
+				</tbody>
+				</table>
+            </div>
+          </div>
+    </div><!-- /.col-sm-4 -->
+		
+	<div class="container row">
+		<div class="col-md-12">
+			<h3 class="sub-header">Based on Prediction Inputs</h3>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Origin Airport</th>
+                  <th>Destination Airport</th>
+                  <th>Airline</th>
+                  <th>Month</th>
+                  <th>Day of Month </th>
+				  <th>Weekday</th>
+				  <th>Time of Day</th>
+                </tr>
+              </thead>
+              <tbody>
+				 <tr>
+                  <td>{{ origin }}</td>
+                  <td> {{ destination }}</td>
+                  <td>{{ airline }}</td>
+                  <td>{{ m }}</td>
+                  <td>{{ m_day }} </td>
+				  <td>{{ w_day }}</td>
+				  <td>{{ time }}</td>
+                </tr>
+              </tbody>
+            </table>
+		<h4>Results based on your input and historical flight performance</h4>
+		</div>
+		
+      </div>
+	</div>
+	</br>
+	<div>
+		<a class="btn btn-lg btn-primary" href= />Search Again</a> 
+	</div>
+	</br>
+	
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          <strong>Type Search Name to Save Search</strong>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+		{% crispy form2%}
+      </div>
+	</div>
+  </div>
+</div>
+
+
+</div>
+{% endblock %}
+	

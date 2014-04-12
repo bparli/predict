@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container theme-showcase" role="main">
+	<div class="jumbotron">
+        <h1 class="top">{{ user.username }}'s Saved Predictions</h1>
+	{% for e in searches %}
+	</br>
+	<h2>{{ e.4 }}</h2>
+	<div class="col-md-6 result">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="top">Delay Prediction</h2>
+            </div>
+            <div class="panel-body">
+				<table>
+				<tbody>
+					<tr>
+						<td><h1>{{ e.0 }}%</h1></td>
+						<td><h4>Compared with {{ e.2 }}% nationally</h4></td>
+					</tr>
+				</tbody>
+				</table>
+            </div>
+          </div>
+	</div>
+	<div class="col-md-6 result">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="top">Cancellation Prediction</h2>
+            </div>
+            <div class="panel-body">
+				<table>
+				<tbody>
+					<tr>
+						<td><h1>{{ e.1 }}%</h1></td>
+						<td><h4>Compared with {{ e.3 }}% nationally</h4></td>
+					</tr>
+				</tbody>
+				</table>
+            </div>
+          </div>
+    </div><!-- /.col-sm-4 -->
+		
+	<div class="container row">
+		<div class="col-md-12">
+			<h3 class="sub-header">Based on Prediction Inputs</h3>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Origin Airport</th>
+                  <th>Destination Airport</th>
+                  <th>Airline</th>
+                  <th>Month</th>
+                  <th>Day of Month </th>
+				  <th>Weekday</th>
+				  <th>Time of Day</th>
+                </tr>
+              </thead>
+              <tbody>
+				 <tr>
+                  <td>{{ e.5 }}</td>
+                  <td> {{ e.6 }}</td>
+                  <td>{{ e.7 }}</td>
+                  <td>{{ e.8 }}</td>
+                  <td>{{ e.9 }} </td>
+				  <td>{{ e.10 }}</td>
+				  <td>{{ e.11 }}</td>
+                </tr>
+              </tbody>
+            </table>
+		<h4>Results based on input information and historical on-time flight performance</h4>
+		</div>
+		
+      </div>
+	</div>
+	
+	{% endfor %}
+	
+	<div class="pagination">
+    <span class="step-links">
+        {% if searches.has_previous %}
+            <a href="?page={{ searches.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ searches.number }} of {{ searches.paginator.num_pages }}.
+        </span>
+
+        {% if searches.has_next %}
+            <a href="?page={{ searches.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+	</div>
+</div>
+{% endblock %}
+	

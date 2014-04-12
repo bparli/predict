@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Flights Mystic</h1>
+		
+        <p>Foresee airtravel delays and cancellations, plan your trip by predicting and avoiding airtravel hassles.  To predict flight on-time performance enter as much information as possible below. </p>
+      {% crispy form %}	  
+	  </div>
+</div> <!-- /container -->
+
+<div class="ui-widget">
+  <label for="airports">Airports: </label>
+  <input id="airports">
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+$(function() {
+  $("#airports").autocomplete({
+    source: "api/get_airports/",
+    minLength: 2,
+  });
+});
+</script>
+{% endblock %}

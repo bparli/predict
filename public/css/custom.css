@@ -1,0 +1,71 @@
+body
+{ background: #F7F7F7 url(../images/pattern.png) fixed;}
+
+.errorlist {
+	color: red;
+}
+
+.jumbotron {
+    background-color: #eee;
+}
+
+td
+{
+padding:10px;
+}	
+
+h1.top {
+text-align:center;
+font-family: "Garamond","Helvetica Neue",Helvetica,Arial,sans-serif; 
+color: #2B669A;
+}
+
+h1 {
+font-family: "Garamond","Helvetica Neue",Helvetica,Arial,sans-serif; 
+}
+
+.navbar-inverse  {
+    background-color: white;
+    background-image: linear-gradient(to bottom, #D8D8E3, #eee);
+    background-repeat: repeat-x;
+    border-color: #eee;
+    color: #eee;
+}
+
+.navbar-inverse .navbar-brand {
+color: #2B669A;
+font-size: 25px;
+font-family: "Garamond";
+}
+
+.navbar-inverse .navbar-nav>li>a {
+color: #2B669A;
+font-size: 15px;
+}
+
+h2.top {
+text-align:center;
+}
+
+element.style {
+    height: auto;
+}
+
+.col-md-6.result {
+  background-color: #eee;
+  border: 1px rgba(86,61,124,.2);
+  padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active, 
+.ui-autocomplete, .ui-autocomplete:hover, 
+.ui-menu-item, .ui-menu-item:hover,
+.ui-menu-item a, .ui-menu-item a:hover
+{ background: #ffffff none no-repeat; padding:0;margin:0;display:block;border:0;border-collapse:collapse;}
+.ui-autocomplete, .ui-autocomplete:hover { z-index:20;border: 1px solid #bebebe; background-color: #ffffff;width: 200px; padding: 4px;margin:0;border-radius: 6px;}
+
+.ui-menu-item a:hover { background-color: #0083c4; color: #ffffff;padding: 0px 0px 0px 7px; }
